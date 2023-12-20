@@ -1,0 +1,59 @@
+:root {
+    --multiplier: 1.3333;
+}
+
+.navbar {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #E4E3EB;
+    height: calc(80px * var(--multiplier));
+    align-items: center;
+    box-sizing: border-box;
+    padding: 0 calc(76px * var(--multiplier));
+}
+
+.navbar-when-posting {
+    width: 100%;
+    display: flex;
+    border-bottom: 1px solid #E4E3EB;
+    height: calc(80px * var(--multiplier));
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    padding: 0 calc(76px * var(--multiplier));
+}
+
+.sign-in-button {
+    font-family: "FiraGo", serif;
+    padding: calc(10px * var(--multiplier)) calc(20px * var(--multiplier));
+    background-color: #5D37F3;
+    color: white;
+    font-size: calc(14px * var(--multiplier));
+    border-radius: calc(8px * var(--multiplier));
+    border: 1px solid #5D37F3;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+
+/*sign in button on click darker color*/
+.sign-in-button:hover {
+    background-color: #4C2EEB;
+    border: 1px solid #4C2EEB;
+}
+
+.navbar-logo {
+    transform: translateX(25px) scale(var(--multiplier));
+}
+
+.sign-in-overlay {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0,0,0,0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    left: 0;
+}
