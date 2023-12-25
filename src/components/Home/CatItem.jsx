@@ -1,5 +1,4 @@
 import "./CatItem.css";
-import { ReactComponent as WhiteXIcon } from "../../assets/white-x-icon.svg";
 
 function hexToRGBA(hex, alpha = 1) {
     // Expand shorthand form (e.g. "03F") to full form (e.g. "0033FF")
@@ -14,22 +13,20 @@ function hexToRGBA(hex, alpha = 1) {
 
 
 const CatItem = ({
-    title,
-    text_color,
-    background_color,
-    displayIcon,
-    onClick,
-    selected,
+                     title,
+                     background_color,
+                     onClick,
+                     selected,
+                     providedStyles = {},
 
-}) => {
+                 }) => {
     return (
         <div
             className="cat-item"
-            style={{ backgroundColor: !selected ? hexToRGBA(background_color, 0.08): background_color, color: !selected ? background_color: text_color}}
+            style={{ backgroundColor: hexToRGBA(background_color, 0.08), color:background_color, outline: selected ? "1px solid black" : "none", ...providedStyles }}
             onClick={onClick}
         >
             <p>{title}</p>
-            {displayIcon && <WhiteXIcon className="white-x-icon" onClick={onClick}/>}
         </div>
     );
 };

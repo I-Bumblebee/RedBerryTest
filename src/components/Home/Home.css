@@ -1,0 +1,84 @@
+:root {
+    --multiplier: 1.33333;
+}
+
+.home {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.home-header {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: calc(89px * var(--multiplier));
+    padding-right: calc(69px * var(--multiplier));
+    padding-top: calc(64px * var(--multiplier));
+    padding-bottom: calc(64px * var(--multiplier));
+}
+
+.home-header > h1 {
+    margin: 0;
+    font-weight: 700;
+    font-size: calc(64px * var(--multiplier));
+    color: #1A1A1F;
+}
+
+.home-header > img {
+    width: calc(624px * var(--multiplier));
+    height: calc(200px * var(--multiplier));
+}
+
+.categories-row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start; /* Change justify-content to flex-start */
+    width: calc(684px * var(--multiplier));
+    height: 60px; /* Change height to auto to allow content to expand vertically */
+    gap: calc(24px * var(--multiplier));
+    overflow-x: scroll;
+    overflow-y: visible; /* Change overflow-y to hidden to prevent vertical scrolling */
+    box-sizing: content-box; /* Use border-box to include padding and borders in the element's total width and height */
+    padding: 0 10px;
+}
+
+.categories-row::-webkit-scrollbar {
+    width: 4px;
+    height: 4px; /* Set height to 2px for a thin scrollbar on the x-axis */
+}
+
+.categories-row::-webkit-scrollbar-thumb {
+    background-color: lightgray;
+    border-radius: 100px;
+    width: 50%; /* Set width to 100% to fill the entire scrollbar track horizontally */
+    height: 100%; /* Set height to 100% to fill the entire scrollbar track vertically */
+}
+
+
+.blog-posts {
+    width: calc(1289px * var(--multiplier));
+    gap: calc(32px * var(--multiplier));
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: flex-start;
+
+    margin: calc(64px * var(--multiplier)) 0;
+}
+
+.test-item {
+    width: calc(408px * var(--multiplier));
+    height: calc(620px * var(--multiplier));
+    background-color: red;
+}
+
+
+

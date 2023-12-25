@@ -62,15 +62,29 @@
     box-sizing: border-box;
     margin-top: calc(8px * var(--multiplier));
 }
+.email-input-box.false {
+    width: calc(432px * var(--multiplier));
+}
 
 .email-input-box.error {
     border-color: #EA1919;
     background-color: #FAF2F3;
+    width: calc(432px * var(--multiplier));
 }
 
 /*active email input box border color*/
+.email-input-box.error:focus {
+    border-color: #EA1919;
+    background-color: #FAF2F3;
+    width: calc(432px * var(--multiplier));
+}
+
 .email-input-box:focus {
     outline: none;
+    border: 2px solid #5D37F3;
+    background-color: #F7F7FF;
+    width: calc(432px * var(--multiplier));
+
 }
 
 

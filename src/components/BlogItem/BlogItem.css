@@ -1,0 +1,93 @@
+.blog-item > img {
+    object-fit: cover;
+    border-radius: calc(12px * var(--multiplier));
+}
+
+.blog-item > h3{
+    margin: 0;
+    margin-top: calc(24px * var(--multiplier));
+
+    font-weight: 500;
+    font-size: calc(16px * var(--multiplier));
+    color: #1A1A1F;
+}
+
+.blog-item > h4{
+    margin: 0;
+    margin-top: calc(10px * var(--multiplier));
+    font-weight: 400;
+    font-size: calc(12px * var(--multiplier));
+    color: #85858D;
+
+}
+
+.blog-item > h2 {
+    margin: 0;
+    /*margin-top: calc(24px * var(--multiplier));*/
+    margin-top: calc(16px * var(--multiplier));
+
+    font-weight: 700;
+    color: #1A1A1F;
+    font-size: calc(24px * var(--multiplier));
+}
+
+.blog-item > p {
+    margin: 0;
+    margin-top: calc(16px * var(--multiplier));
+
+    font-weight: 400;
+    font-size: calc(16px * var(--multiplier));
+    line-height: calc(28px * var(--multiplier));
+    color: #404049;
+}
+
+.blog-item {
+    border-radius: calc(12px * var(--multiplier));
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+
+}
+
+.blog-item-categories-row {
+
+    margin-top: calc(16px * var(--multiplier));
+
+    display: flex;
+    flex-direction: row;
+    overflow-y: hidden;
+    overflow-x: scroll;
+    width: 100%;
+    -ms-overflow-style: none; /* Hide scrollbar for IE and Edge */
+    scrollbar-width: none; /* Hide scrollbar for Firefox */
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
+
+    gap: calc(16px * var(--multiplier));
+
+}
+
+.arrow-icon {
+    scale: var(--multiplier);
+}
+
+.blog-view-link {
+    margin: 0;
+    margin-top: calc(16px * var(--multiplier));
+
+    font-weight: 500;
+    font-size: calc(14px * var(--multiplier));
+    line-height: calc(20px * var(--multiplier));
+    color: #5D37F3;
+    text-decoration: none;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: calc(5px * var(--multiplier));
+/*justify self*/
+    justify-self: flex-end;
+}
+
