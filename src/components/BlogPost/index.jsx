@@ -77,6 +77,8 @@ function BlogPost() {
     const navigate = useNavigate();
 
 
+    const [buttonActive, setButtonActive] = useState(false);
+
     useEffect(() => {
         // get categories from server
         const token = process.env.REACT_APP_TOKEN;
@@ -315,32 +317,44 @@ function BlogPost() {
         localStorage.setItem("email", JSON.stringify(email));
     }, [email]);
 
+    useEffect(() => {
+    //     determine submit button status
+        if (
+            authorStatus === "green" &&
+            titleStatus === "green" &&
+            descStatus === "green" &&
+            dateStatus === "green" &&
+            selectedCategories.length !== 0 &&
+            (email.length === 0 || !unsupportedEmail) &&
+            image !== null
+        ) {
+            setButtonActive(true);
+        } else {
+            setButtonActive(false);
+        }
+
+    }, [authorStatus, titleStatus, descStatus, dateStatus, selectedCategories, image, email, unsupportedEmail]);
+
     const handleSubmit = (event) => {
         event.preventDefault();
 
         if (image === null) {
             setNoImage(true);
-            return;
         }
         if (author === "") {
             setNoAuthor(true);
-            return;
         }
         if (title === "") {
             setNoTitle(true);
-            return;
         }
         if (desc === "") {
             setNoDesc(true);
-            return;
         }
         if (date === null) {
             setNoDate(true);
-            return;
         }
         if (selectedCategories.length === 0) {
             setNoCat(true);
-            return;
         }
 
         // if any of the validations fail return
@@ -351,7 +365,13 @@ function BlogPost() {
             titleMin2Chars ||
             descMin2Chars ||
             oldDate ||
-            unsupportedEmail
+            unsupportedEmail ||
+            image === null ||
+            author === "" ||
+            title === "" ||
+            desc === "" ||
+            date === null ||
+            selectedCategories.length === 0
         ) {
             return;
         }
@@ -384,6 +404,7 @@ function BlogPost() {
         ).then((response) => {
             if (response.status === 204) {
                 setSuccess(true);
+                console.log("success");
             } else {
                 alert("რაღაც შეცდომა მოხდა, სცადეთ ხელახლა მოგვიანებით <3");
             }
@@ -728,7 +749,7 @@ function BlogPost() {
                             </ul>
                         </div>
                         <div className="input-container right">
-                            <button type="submit" onClick={handleSubmit}>
+                            <button type="submit" onClick={handleSubmit} className={buttonActive && "clickable"}>
                                 გამოქვეყნება
                             </button>
                         </div>

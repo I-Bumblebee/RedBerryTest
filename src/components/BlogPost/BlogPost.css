@@ -8,6 +8,16 @@
     left: calc(76px * var(--multiplier));
     cursor: pointer;
     scale: var(--multiplier);
+    color: #E4E3EB;
+    transition: color 0.15s ease-in-out;
+}
+
+.back-icon:hover {
+    color: #D9D8E0;
+}
+
+.back-icon:active {
+    color: #CFCED6;
 }
 
 .main-container {
@@ -154,6 +164,7 @@ input[type="text"].green {
 
 input[type="text"].gray:focus {
     border: solid 2px #5D37F3;
+    background-color: #F7F7FF;
 }
 
 textarea {
@@ -184,6 +195,8 @@ textarea.green {
 
 textarea.gray:focus {
     border: solid 2px #5D37F3;
+    background-color: #F7F7FF;
+
 }
 
 
@@ -223,6 +236,8 @@ input[type="calendar"] {
 
 .date-picker.focus {
     border: solid 2px #5D37F3;
+    background-color: #F7F7FF;
+
     color: #85858D;
 }
 
@@ -265,14 +280,16 @@ input[type="calendar"] {
 
 .category-container.focus {
     border: solid 2px #5D37F3;
+    background-color: #F7F7FF;
+
     color: #85858D;
-    background-color: white;
+
 }
 
 .category-container.focus.green {
     border: solid 2px #5D37F3;
     color: #85858D;
-    background-color: white;
+    background-color: #F7F7FF;
 }
 
 .white-x-icon {
@@ -367,6 +384,8 @@ input[type="email"].match {
 
 input[type="email"].gray:focus {
     border: solid 2px #5D37F3;
+    background-color: #F7F7FF;
+
 }
 
 input[type="mail"].gray {
@@ -379,19 +398,6 @@ input[type="mail"].gray {
 }
 
 button[type="submit"] {
-/*    Width
-Fixed (288px)
-Height
-Hug (40px)
-Radius
-8px
-Padding
-10px, 20px, 10px, 20px
-Gap
-10px
-#E4E3EB*/
-
-/*    *mul*/
     width: calc(288px * var(--multiplier));
     height: calc(40px * var(--multiplier));
     border-radius: calc(8px * var(--multiplier));
@@ -403,19 +409,23 @@ Gap
     font-size: calc(14px * var(--multiplier));
     outline: none;
     cursor: pointer;
-/*    transition delay*/
     transition: background-color 0.15s ease-in-out;
 }
 
-button[type="submit"]:hover {
+button[type="submit"].clickable {
+    background-color: #5D37F3;
+    border-color: #5D37F3;
+}
+
+button[type="submit"].clickable:hover {
     background-color: #5D37F3;
 }
 
-button[type="submit"]:active {
+button[type="submit"].clickable:active {
     background-color: #5D37F3;
 }
 
-button[type="submit"]:focus {
+button[type="submit"].clickable:focus {
     background-color: #5D37F3;
 }
 

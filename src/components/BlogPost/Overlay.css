@@ -39,6 +39,11 @@
     margin-bottom: calc(-30px * var(--multiplier));
 }
 
+.overlay-x-icon:hover {
+    background-color: #f5f4f9;
+    border-radius: 50%;
+}
+
 .overlay-tick-icon {
     scale: var(--multiplier);
 }

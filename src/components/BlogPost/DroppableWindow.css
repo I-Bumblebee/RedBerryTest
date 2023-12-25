@@ -12,8 +12,14 @@
     border: dashed 2px #85858D;
 
     padding: calc(48px * var(--multiplier)) 0;
+    transition: background-color 0.15s ease-in-out;
 
 
+}
+
+.droppable-window:hover {
+    background-color: #F1EFFB
+;
 }
 
 .droppable-window.not-visible {
@@ -49,6 +55,13 @@
     margin-right: calc(16px * var(--multiplier));
     scale: var(--multiplier);
     cursor: pointer;
+}
+
+.x-icon:hover {
+    background-color: #f5f4f9;
+/*    radius full*/
+    border-radius: 50%;
+
 }
 
 .image-preview-title.not-visible {
