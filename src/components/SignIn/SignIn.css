@@ -93,6 +93,7 @@
 
     border-radius: calc(8px * var(--multiplier));
 
+    transition: background-color 0.25s ease-in-out;
 }
 
 
@@ -135,6 +136,10 @@
 }
 
 .accept-button:hover {
+    background-color: #4F2EEA;
+}
+
+.submit-button:hover {
     background-color: #4F2EEA;
 }
 

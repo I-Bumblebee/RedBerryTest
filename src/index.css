@@ -1,7 +1,8 @@
-@import url('https://free.bboxtype.com/embedfonts/?family=FiraGO:500,400,600');
+@import url('https://free.bboxtype.com/embedfonts/?family=FiraGO:500,400,600,700');
 
 body {
   margin: 0;
+  background-color: #FBFAFF;
 }
 * {
   box-sizing: border-box;

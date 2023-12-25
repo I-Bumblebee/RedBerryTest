@@ -1,0 +1,78 @@
+.droppable-window {
+
+    background-color: #F4F3FF ;
+    width: calc(600px * var(--multiplier));
+    height: calc(180px * var(--multiplier));
+    border-radius: calc(12px * var(--multiplier));
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+
+    border: dashed 2px #85858D;
+
+    padding: calc(48px * var(--multiplier)) 0;
+
+
+}
+
+.droppable-window.not-visible {
+    display: none !important;
+    background-color: #502121;
+}
+
+.image-preview-title {
+    width: calc(600px * var(--multiplier));
+    height: calc(56px * var(--multiplier));
+    border-radius: calc(12px * var(--multiplier));
+    background-color: #F2F2FA;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    font-weight: 400;
+    color: #1A1A1F;
+    font-size: calc(14px * var(--multiplier));
+
+}
+.image-preview-title > span {
+    margin: 0;
+}
+.image-icon {
+    scale: var(--multiplier);
+    margin: 0 calc(16px * var(--multiplier));
+}
+
+.x-icon {
+    /*    float right*/
+    margin-left: auto;
+    margin-right: calc(16px * var(--multiplier));
+    scale: var(--multiplier);
+    cursor: pointer;
+}
+
+.image-preview-title.not-visible {
+    display: none !important;
+}
+
+.add-file-icon {
+    width: calc(40px * var(--multiplier));
+    height: calc(40px * var(--multiplier));
+}
+
+.choose-file-button {
+    background-color: rgba(0,0,0,0.0);
+    border: none;
+    font-weight: 500;
+    text-decoration: underline;
+    color: #1A1A1F;
+    font-size: calc(14px * var(--multiplier));
+    cursor: pointer;
+}
+
+/*span child of file input label*/
+.file-input-label > span {
+    font-weight: 400;
+    color: #1A1A1F;
+    font-size: calc(14px * var(--multiplier));
+}

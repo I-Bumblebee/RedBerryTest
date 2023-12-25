@@ -36,7 +36,7 @@ function SignIn({ setIsOverlayVisible }) {
                 setErrorMessage("");
                 setIsSignedIn(true);
                 localStorage.setItem("isSignedIn", JSON.stringify(true));
-                localStorage.setItem("email", JSON.stringify(email));
+                // localStorage.setItem("email", JSON.stringify(email));
             } else {
                 setErrorMessage("რაღაც არასწორია, სცადეთ თავიდან მოგვიანებით");
             }

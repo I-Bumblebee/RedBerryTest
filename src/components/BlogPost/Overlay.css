@@ -1,0 +1,86 @@
+:root {
+    --multiplier: 1.3333;
+}
+
+.overlay-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.2);
+    z-index: 100;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.overlay {
+
+    width: calc(480px * var(--multiplier));
+    height: calc(300px * var(--multiplier));
+    border-radius: calc(12px * var(--multiplier));
+    background-color: #FFFFFF;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: calc(30px * var(--multiplier)) calc(30px * var(--multiplier));
+    position: relative;
+
+}
+
+
+.overlay-x-icon {
+    scale: var(--multiplier);
+    align-self: end;
+    cursor: pointer;
+/*    negative margin bottom*/
+    margin-bottom: calc(-30px * var(--multiplier));
+}
+
+.overlay-tick-icon {
+    scale: var(--multiplier);
+}
+
+.overlay-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: calc(20px * var(--multiplier));
+    /*width: calc(290px * var(--multiplier));*/
+    /*height: calc(108px * var(--multiplier));*/
+
+    font-weight: 700;
+    color: #1A1A1F;
+    font-size: 20px;
+    /*text-align: center;*/
+    white-space: nowrap;
+    overflow: visible;
+}
+
+.overlay-text > h2{
+    margin: 0;
+}
+
+.overlay-button {
+    width: calc(432px * var(--multiplier));
+    height: calc(40px * var(--multiplier));
+    border-radius: calc(8px * var(--multiplier));
+    border: solid 1px #5D37F3;
+    background-color: #5D37F3;
+    padding: calc(10px * var(--multiplier)) calc(20px * var(--multiplier));
+    font-weight: 500;
+    color: white;
+    font-size: calc(14px * var(--multiplier));
+    outline: none;
+    cursor: pointer;
+/*    transform delay*/
+    transition: transform 0.2s ease-in-out;
+}
+
+.overlay-button:hover {
+    background-color: #4C2DDC;
+}
+

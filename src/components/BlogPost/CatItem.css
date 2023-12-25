@@ -1,0 +1,36 @@
+:root {
+    --multiplier: 1.3333;
+}
+
+.cat-item {
+    padding: calc(8px * var(--multiplier)) calc(12px * var(--multiplier));
+    gap: calc(8px * var(--multiplier));
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: fit-content;
+    height: fit-content;
+    /*margin: calc(6px * var(--multiplier)); !* Add margin between items for spacing *!*/
+    border-radius: calc(30px * var(--multiplier));
+/*    text no wrap*/
+    white-space: nowrap;
+
+    font-size: calc(12px * var(--multiplier));
+    line-height: calc(16px * var(--multiplier));
+    font-weight: 500;
+}
+
+.white-x-icon {
+    scale: var(--multiplier);
+    cursor: pointer;
+}
+
+.cat-item > p {
+    font-weight: 500;
+    font-size: calc(12px * var(--multiplier));
+    line-height: calc(16px * var(--multiplier));
+    margin: 0;
+    padding: 0;
+/*    pointer*/
+    cursor: pointer;
+}
