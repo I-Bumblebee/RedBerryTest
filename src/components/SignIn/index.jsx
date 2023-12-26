@@ -4,11 +4,13 @@ import { ReactComponent as XIcon } from "../../assets/x-icon.svg";
 import { ReactComponent as InfoIcon } from "../../assets/info-icon.svg";
 import { ReactComponent as TickIcon } from "../../assets/tick-icon.svg";
 import AuthContext from "../../contexts/AuthContext";
+import {useNavigate}    from "react-router-dom";
 
 function SignIn({ setIsOverlayVisible }) {
     const [email, setEmail] = useState("");
     const [errorMessage, setErrorMessage] = useState("");
     const { isSignedIn, setIsSignedIn } = React.useContext(AuthContext);
+    const navigate = useNavigate();
 
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -43,11 +45,16 @@ function SignIn({ setIsOverlayVisible }) {
         });
     };
 
+    const handleClose = () => {
+        navigate("/");
+        setIsOverlayVisible(false);
+    }
+
     return (
         <div className="sign-in">
             <div
                 className="sign-in-close"
-                onClick={() => setIsOverlayVisible(false)}
+                onClick={handleClose}
             >
                 <XIcon className="sign-in-close-icon" />
             </div>
@@ -93,7 +100,7 @@ function SignIn({ setIsOverlayVisible }) {
                         </h3>
                     </div>
                     <button
-                        onClick={() => setIsOverlayVisible(false)}
+                        onClick={handleClose}
                         className="submit-button accepted"
                     >
                         {" "}

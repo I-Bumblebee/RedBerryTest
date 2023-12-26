@@ -48,7 +48,6 @@ function Home() {
             .then((response) => response.json())
             .then((data) => setBlogs(data.data));
 
-
         // Retrieve selectedCats from localStorage
         const selectedCatsFromLocalStorage = JSON.parse(
             localStorage.getItem("selectedCats") || "[]",
@@ -66,7 +65,8 @@ function Home() {
 
             // Check if at least one of the selected category IDs is in the blog's categories
             const selectedCatsIDs = selectedCats.map((cat) => cat.id);
-            const hasMatchingCategory = selectedCats.length === 0 ||
+            const hasMatchingCategory =
+                selectedCats.length === 0 ||
                 blog.categories.some((category) =>
                     selectedCatsIDs.includes(category.id),
                 );
@@ -77,7 +77,7 @@ function Home() {
     }, [selectedCats, blogs]);
 
     useEffect(() => {
-    //     store selectedCats in localStorage
+        //     store selectedCats in localStorage
         localStorage.setItem("selectedCats", JSON.stringify(selectedCats));
     }, [selectedCats]);
 
@@ -93,13 +93,6 @@ function Home() {
     function convertDateString(inputDateString) {
         const [year, month, day] = inputDateString.split("-");
         return `${day}.${month}.${year}`;
-    }
-
-    function truncateText(input, maxLength) {
-        if (input.length > maxLength) {
-            return input.substring(0, maxLength) + "...";
-        }
-        return input;
     }
 
     return (
@@ -132,7 +125,7 @@ function Home() {
                         title={blog.title}
                         date={convertDateString(blog.publish_date)}
                         author={blog.author}
-                        description={truncateText(blog.description)}
+                        description={blog.description}
                         categories={blog.categories}
                         fullScale={false}
                         email={blog.email}
