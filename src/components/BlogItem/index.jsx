@@ -1,7 +1,7 @@
 import "./BlogItem.css";
 import CatItem from "../Home/CatItem";
-import {Link} from "react-router-dom";
-import {ReactComponent as ArrowIcon} from "../../assets/arrow-icon.svg";
+import { Link } from "react-router-dom";
+import { ReactComponent as ArrowIcon } from "../../assets/arrow-icon.svg";
 
 function BlogItem({
     id,
@@ -32,14 +32,12 @@ function BlogItem({
                         : { width: "544px", height: "437px" }
                 }
             />
-            {/*    author*/}
-            <h3>{author}</h3>
-            <h4>{date + (fullScale ? "  •  " + (email ?? "") : "")}</h4>
-            <h2 style={fullScale ? { fontSize: "43px" } : { fontSize: "27px" }}>
+            <h3 style={fullScale ? {marginTop: "53px"} : {}}>{author}</h3>
+            <h4 style={fullScale ? {marginTop: "18px"} : {}}>{date + (fullScale ?  (email ? "  •  " + email : ""): "")}</h4>
+            <h2 style={fullScale ? { fontSize: "43px", marginTop: "32px"} : { fontSize: "27px" }}>
                 {title}
             </h2>
-            {/*    list caategories as catItem*/}
-            <div className="blog-item-categories-row">
+            <div className="blog-item-categories-row" style={fullScale ? {marginTop: "32px"} : {}}>
                 {categories.map((cat) => (
                     <CatItem
                         key={cat.id}
@@ -52,13 +50,29 @@ function BlogItem({
                     />
                 ))}
             </div>
-            {/*    description*/}
-            <p>{description}</p>
-            {/*    read more*/}
-        {/*    redirect to other ling*/}
-            <Link to={`/view-blog/${id}`} className="blog-view-link">სრულად ნახვა <ArrowIcon className="arrow-icon"/></Link>
+            <p
+                style={
+                    fullScale
+                        ? {marginTop: "53px"}
+                        : {
+                              overflow: "hidden",
+                              display: "-webkit-box",
+                              WebkitLineClamp: 2,
+                              WebkitBoxOrient: "vertical",
+                              height: `calc(56px * var(--multiplier))`,
+                          }
+                }
+            >
+                {description}
+            </p>
+
+            {fullScale ? null : (
+                <Link to={`/view-blog/${id}`} className="blog-view-link">
+                    სრულად ნახვა <ArrowIcon className="arrow-icon" />
+                </Link>
+            )}
         </div>
     );
 }
 
-export default BlogItem
+export default BlogItem;

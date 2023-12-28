@@ -45,6 +45,7 @@
 
 .navbar-logo {
     transform: translateX(25px) scale(var(--multiplier));
+    cursor: pointer;
 }
 
 .sign-in-overlay {

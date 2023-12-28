@@ -31,7 +31,7 @@ function Navbar() {
 
     return (
         <div className={`${isSignInVisible ? "navbar" : "navbar-when-posting"}`}>
-            <RedBerryLogo className="navbar-logo"/>
+            <RedBerryLogo className="navbar-logo" onClick={() => navigate("/")}/>
             { isSignInVisible &&
                 <button className="sign-in-button" onClick={handleClicked}>{!isSignedIn ? "შესვლა" : "დაამატე ბლოგი"}</button>
             }

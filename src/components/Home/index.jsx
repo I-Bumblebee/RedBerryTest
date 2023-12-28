@@ -4,49 +4,13 @@ import { useEffect, useState } from "react";
 import CatItem from "./CatItem";
 import BlogItem from "../BlogItem";
 
-function Home() {
-    const [categories, setCategories] = useState([]);
+function Home({categories, blogs}) {
     const [selectedCats, setSelectedCats] = useState([]);
 
-    const [blogs, setBlogs] = useState([]);
     const [filteredBlogs, setFilteredBlogs] = useState([]);
 
     useEffect(() => {
-        const token = process.env.REACT_APP_TOKEN;
 
-        // Fetch categories
-        const requestOptions = {
-            method: "GET",
-            headers: {
-                Accept: "application/json",
-                Authorization: `Bearer ${token}`,
-            },
-        };
-
-        fetch(
-            "https://api.blog.redberryinternship.ge/api/categories",
-            requestOptions,
-        )
-            .then((response) => response.json())
-            .then((data) => {
-                setCategories(data.data);
-            });
-
-        // Fetch blogs
-        const requestOptions2 = {
-            method: "GET",
-            headers: {
-                Accept: "application/json",
-                Authorization: `Bearer ${token}`,
-            },
-        };
-
-        fetch(
-            "https://api.blog.redberryinternship.ge/api/blogs",
-            requestOptions2,
-        )
-            .then((response) => response.json())
-            .then((data) => setBlogs(data.data));
 
         // Retrieve selectedCats from localStorage
         const selectedCatsFromLocalStorage = JSON.parse(

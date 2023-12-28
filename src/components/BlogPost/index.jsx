@@ -22,7 +22,7 @@ const CostumCalendar = forwardRef(({ value, onClick, status }, ref) => {
     );
 });
 
-function BlogPost() {
+function BlogPost({ categories }) {
     // Author validation:
     const [noAuthor, setNoAuthor] = useState(false);
     const [min2words, setMin2words] = useState(false);
@@ -64,9 +64,6 @@ function BlogPost() {
     const [noImage, setNoImage] = useState(false);
     const [image, setImage] = useState(null);
 
-    // selectable categories
-    const [categories, setCategories] = useState([]);
-
     // selected categories
     const [selectedCategories, setSelectedCategories] = useState([]);
 
@@ -76,28 +73,10 @@ function BlogPost() {
     const [success, setSuccess] = useState(false);
     const navigate = useNavigate();
 
-
     const [buttonActive, setButtonActive] = useState(false);
 
     useEffect(() => {
         // get categories from server
-        const token = process.env.REACT_APP_TOKEN;
-        const requestOptions = {
-            method: "GET",
-            headers: {
-                Accept: "application/json",
-                Authorization: `Bearer ${token}`,
-            },
-        };
-
-        fetch(
-            "https://api.blog.redberryinternship.ge/api/categories",
-            requestOptions,
-        )
-            .then((response) => response.json())
-            .then((data) => {
-                setCategories(data.data);
-            });
 
         //     get data from local storage
         const author = JSON.parse(localStorage.getItem("author"));
@@ -318,7 +297,7 @@ function BlogPost() {
     }, [email]);
 
     useEffect(() => {
-    //     determine submit button status
+        //     determine submit button status
         if (
             authorStatus === "green" &&
             titleStatus === "green" &&
@@ -332,8 +311,16 @@ function BlogPost() {
         } else {
             setButtonActive(false);
         }
-
-    }, [authorStatus, titleStatus, descStatus, dateStatus, selectedCategories, image, email, unsupportedEmail]);
+    }, [
+        authorStatus,
+        titleStatus,
+        descStatus,
+        dateStatus,
+        selectedCategories,
+        image,
+        email,
+        unsupportedEmail,
+    ]);
 
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -749,7 +736,11 @@ function BlogPost() {
                             </ul>
                         </div>
                         <div className="input-container right">
-                            <button type="submit" onClick={handleSubmit} className={buttonActive && "clickable"}>
+                            <button
+                                type="submit"
+                                onClick={handleSubmit}
+                                className={buttonActive && "clickable"}
+                            >
                                 გამოქვეყნება
                             </button>
                         </div>

@@ -10,6 +10,7 @@
     scale: var(--multiplier);
     color: #E4E3EB;
     transition: color 0.15s ease-in-out;
+    fill: #1A1A1F;
 }
 
 .back-icon:hover {
