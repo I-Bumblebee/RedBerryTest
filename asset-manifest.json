@@ -1,25 +1,25 @@
 {
   "files": {
-    "main.css": "/RedBerryTest/static/css/main.f8d7de00.css",
-    "main.js": "/RedBerryTest/static/js/main.b45c375b.js",
-    "static/media/red-berry-logo.svg": "/RedBerryTest/static/media/red-berry-logo.448ea4dcfd2b76dd11010adf92c77bd2.svg",
-    "static/media/header-image.png": "/RedBerryTest/static/media/header-image.b5e4ed77afe383023a30.png",
-    "static/media/calendar-icon.svg": "/RedBerryTest/static/media/calendar-icon.e85596beb59f5ad3b5dacdf4854d2b66.svg",
-    "static/media/add-file-icon.svg": "/RedBerryTest/static/media/add-file-icon.aeb8ec3496327aa90408cbeac7d2da19.svg",
-    "static/media/image-icon.svg": "/RedBerryTest/static/media/image-icon.10964aac524939f5050436b2702d3dcf.svg",
-    "index.html": "/RedBerryTest/index.html",
-    "static/media/info-icon.svg": "/RedBerryTest/static/media/info-icon.016a51abc3afc8cd03fa3ab9ce8f12b4.svg",
-    "static/media/arrow-icon.svg": "/RedBerryTest/static/media/arrow-icon.063e00df3459923156b9c1cbf41b402f.svg",
-    "static/media/left-arrow-icon.svg": "/RedBerryTest/static/media/left-arrow-icon.f252021b91dd6af8d20e50f76c6bd138.svg",
-    "static/media/tick-icon.svg": "/RedBerryTest/static/media/tick-icon.79873e2e8b46ccda7d1c1616108bd29a.svg",
-    "static/media/x-icon.svg": "/RedBerryTest/static/media/x-icon.e2f9879561070043e49ccc94f5e4ce86.svg",
-    "static/media/white-x-icon.svg": "/RedBerryTest/static/media/white-x-icon.f86370482b3f7db9c1cc47d540e7251a.svg",
-    "static/media/arrow-down-icon.svg": "/RedBerryTest/static/media/arrow-down-icon.437a9bf4dfe1ada7c8ce74268dcea44a.svg",
-    "main.f8d7de00.css.map": "/RedBerryTest/static/css/main.f8d7de00.css.map",
-    "main.b45c375b.js.map": "/RedBerryTest/static/js/main.b45c375b.js.map"
+    "main.css": "/static/css/main.f8d7de00.css",
+    "main.js": "/static/js/main.c02a6219.js",
+    "static/media/red-berry-logo.svg": "/static/media/red-berry-logo.448ea4dcfd2b76dd11010adf92c77bd2.svg",
+    "static/media/header-image.png": "/static/media/header-image.b5e4ed77afe383023a30.png",
+    "static/media/calendar-icon.svg": "/static/media/calendar-icon.e85596beb59f5ad3b5dacdf4854d2b66.svg",
+    "static/media/add-file-icon.svg": "/static/media/add-file-icon.aeb8ec3496327aa90408cbeac7d2da19.svg",
+    "static/media/image-icon.svg": "/static/media/image-icon.10964aac524939f5050436b2702d3dcf.svg",
+    "static/media/info-icon.svg": "/static/media/info-icon.016a51abc3afc8cd03fa3ab9ce8f12b4.svg",
+    "index.html": "/index.html",
+    "static/media/arrow-icon.svg": "/static/media/arrow-icon.063e00df3459923156b9c1cbf41b402f.svg",
+    "static/media/left-arrow-icon.svg": "/static/media/left-arrow-icon.f252021b91dd6af8d20e50f76c6bd138.svg",
+    "static/media/tick-icon.svg": "/static/media/tick-icon.79873e2e8b46ccda7d1c1616108bd29a.svg",
+    "static/media/x-icon.svg": "/static/media/x-icon.e2f9879561070043e49ccc94f5e4ce86.svg",
+    "static/media/white-x-icon.svg": "/static/media/white-x-icon.f86370482b3f7db9c1cc47d540e7251a.svg",
+    "static/media/arrow-down-icon.svg": "/static/media/arrow-down-icon.437a9bf4dfe1ada7c8ce74268dcea44a.svg",
+    "main.f8d7de00.css.map": "/static/css/main.f8d7de00.css.map",
+    "main.c02a6219.js.map": "/static/js/main.c02a6219.js.map"
   },
   "entrypoints": [
     "static/css/main.f8d7de00.css",
-    "static/js/main.b45c375b.js"
+    "static/js/main.c02a6219.js"
   ]
 }
