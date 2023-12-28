@@ -15,7 +15,7 @@ function App() {
 
 
     useEffect(() => {
-        const token = process.env.REACT_APP_TOKEN;
+        const token = `922655a53d1e1a589ab56fb63466de5a1e4c0ee9728e5488015b9a613ecff0b2`;
 
         // Fetch categories
         const requestOptions = {
