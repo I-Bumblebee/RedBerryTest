@@ -23,7 +23,7 @@ function Navbar() {
 
     const handleClicked = () => {
         if (isSignedIn) {
-            navigate("/post-blog");
+            navigate("/RedBerryTest/post-blog");
         } else {
             setIsOverlayVisible(true)
         }
@@ -31,7 +31,7 @@ function Navbar() {
 
     return (
         <div className={`${isSignInVisible ? "navbar" : "navbar-when-posting"}`}>
-            <RedBerryLogo className="navbar-logo" onClick={() => navigate("/")}/>
+            <RedBerryLogo className="navbar-logo" onClick={() => navigate("/RedBerryTest/")}/>
             { isSignInVisible &&
                 <button className="sign-in-button" onClick={handleClicked}>{!isSignedIn ? "შესვლა" : "დაამატე ბლოგი"}</button>
             }

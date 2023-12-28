@@ -46,7 +46,7 @@ function SignIn({ setIsOverlayVisible }) {
     };
 
     const handleClose = () => {
-        navigate("/");
+        navigate("/RedBerryTest/");
         setIsOverlayVisible(false);
     }
 

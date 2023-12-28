@@ -9,7 +9,7 @@ function PrivateRoute({ children }) {
     useEffect(() => {
         if (isSignedIn === undefined) return;
         if (!isSignedIn) {
-            navigate("/");
+            navigate("/RedBerryTest/");
         }
     }, [isSignedIn, navigate]);
 

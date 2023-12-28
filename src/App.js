@@ -62,16 +62,16 @@ function App() {
             <div className="App">
                 <Navbar />
                 <Routes>
-                    <Route path="/" element={<Home categories={categories} blogs={blogs}/>} />
+                    <Route path="/RedBerryTest/" element={<Home categories={categories} blogs={blogs}/>} />
                     <Route
-                        path="/post-blog"
+                        path="/RedBerryTest/post-blog"
                         element={
                             <PrivateRoute>
                                 <BlogPost categories={categories} />
                             </PrivateRoute>
                         }
                     />
-                    <Route path="/view-blog/:id" element={<BlogView blogs={blogs} />} />
+                    <Route path="/RedBerryTest/view-blog/:id" element={<BlogView blogs={blogs} />} />
                     <Route path="*" element={<h1>404 Not Found</h1>} />
                 </Routes>
             </div>

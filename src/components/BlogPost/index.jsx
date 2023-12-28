@@ -414,7 +414,7 @@ function BlogPost({ categories }) {
 
         //     clear state
         //     go back to home page /
-        navigate("/");
+        navigate("/RedBerryTest/");
     };
 
     return (
