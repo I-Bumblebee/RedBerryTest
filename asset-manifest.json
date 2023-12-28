@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/RedBerryTest/static/css/main.f8d7de00.css",
-    "main.js": "/RedBerryTest/static/js/main.3ea3eb8b.js",
+    "main.js": "/RedBerryTest/static/js/main.ab1cbcfe.js",
     "static/media/red-berry-logo.svg": "/RedBerryTest/static/media/red-berry-logo.448ea4dcfd2b76dd11010adf92c77bd2.svg",
     "static/media/header-image.png": "/RedBerryTest/static/media/header-image.b5e4ed77afe383023a30.png",
     "static/media/calendar-icon.svg": "/RedBerryTest/static/media/calendar-icon.e85596beb59f5ad3b5dacdf4854d2b66.svg",
@@ -16,10 +16,10 @@
     "static/media/white-x-icon.svg": "/RedBerryTest/static/media/white-x-icon.f86370482b3f7db9c1cc47d540e7251a.svg",
     "static/media/arrow-down-icon.svg": "/RedBerryTest/static/media/arrow-down-icon.437a9bf4dfe1ada7c8ce74268dcea44a.svg",
     "main.f8d7de00.css.map": "/RedBerryTest/static/css/main.f8d7de00.css.map",
-    "main.3ea3eb8b.js.map": "/RedBerryTest/static/js/main.3ea3eb8b.js.map"
+    "main.ab1cbcfe.js.map": "/RedBerryTest/static/js/main.ab1cbcfe.js.map"
   },
   "entrypoints": [
     "static/css/main.f8d7de00.css",
-    "static/js/main.3ea3eb8b.js"
+    "static/js/main.ab1cbcfe.js"
   ]
 }
