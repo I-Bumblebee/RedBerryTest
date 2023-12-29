@@ -80,24 +80,33 @@ function ViewBlog({ blogs }) {
 
 
     useEffect(() => {
-        const similarsRow = similarsRowRef.current;
-
-        const handleScroll = () => {
-            // Check if the scroll position is at the maximum right
-            const isAtMaxRight = similarsRow.scrollLeft + similarsRow.clientWidth >= similarsRow.scrollWidth-200;
-            // Check if the scroll position is at the maximum left
-            const isAtMaxLeft = similarsRow.scrollLeft <= 200;
-            setIsMaxRight(isAtMaxRight);
-            setIsMaxLeft(isAtMaxLeft);
-        };
-
-        similarsRow?.addEventListener('scroll', handleScroll);
-
-        // Cleanup event listener on unmount
-        return () => {
-            similarsRow?.removeEventListener('scroll', handleScroll);
-        };
+        const observer = new MutationObserver((mutationsList, observer) => {
+            // Look through all mutations that just occured
+            for(let mutation of mutationsList) {
+                // If the addedNodes property has one or more nodes
+                if(mutation.addedNodes.length) {
+                    const similarsRow = similarsRowRef.current;
+                    if(similarsRow) {
+                        const handleScroll = () => {
+                            const isAtMaxRight = similarsRow.scrollLeft + similarsRow.clientWidth >= similarsRow.scrollWidth-200;
+                            const isAtMaxLeft = similarsRow.scrollLeft <= 200;
+                            setIsMaxRight(isAtMaxRight);
+                            setIsMaxLeft(isAtMaxLeft);
+                        };
+                        similarsRow.addEventListener('scroll', handleScroll);
+                        // Once our observed element has been added, we disconnect the observer
+                        observer.disconnect();
+                        return () => {
+                            similarsRow.removeEventListener('scroll', handleScroll);
+                        };
+                    }
+                }
+            }
+        });
+        // Starts listening for changes in the root HTML element of the page
+        observer.observe(document.documentElement, { childList: true, subtree: true });
     }, []);
+
 
     const scrollRight = () => {
         const similarsRow = similarsRowRef.current;

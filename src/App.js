@@ -1,6 +1,6 @@
 import "./App.css";
 import Navbar from "./components/Navbar";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { Routes, Route, HashRouter } from "react-router-dom";
 import BlogPost from "./components/BlogPost";
 import Home from "./components/Home";
 import AuthContext from "./contexts/AuthContext";
@@ -58,24 +58,25 @@ function App() {
     }, [isSignedIn]);
 
     return (
-        <Router>
+        <HashRouter >
             <div className="App">
                 <Navbar />
                 <Routes>
-                    <Route path="/RedBerryTest/" element={<Home categories={categories} blogs={blogs}/>} />
+                    <Route path="/" element={<Home categories={categories} blogs={blogs}/>} />
                     <Route
-                        path="/RedBerryTest/post-blog"
+                        path="/post-blog"
                         element={
                             <PrivateRoute>
                                 <BlogPost categories={categories} />
                             </PrivateRoute>
                         }
                     />
-                    <Route path="/RedBerryTest/view-blog/:id" element={<BlogView blogs={blogs} />} />
+                    <Route path="/view-blog/:id" element={<BlogView blogs={blogs} />} />
                     <Route path="*" element={<h1>404 Not Found</h1>} />
                 </Routes>
             </div>
-        </Router>
+        </HashRouter>
+
     );
 }
 

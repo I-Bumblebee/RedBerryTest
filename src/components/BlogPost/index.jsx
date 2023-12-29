@@ -369,7 +369,9 @@ function BlogPost({ categories }) {
         formData.append("description", desc);
         formData.append("image", image);
         formData.append("author", author);
-        formData.append("publish_date", date.toISOString().split("T")[0]);
+        const tmp = date.toLocaleDateString().split("/")
+        const dateString = tmp[2] + "-" + tmp[0] + "-" + tmp[1]
+        formData.append("publish_date", dateString);
         formData.append(
             "categories",
             JSON.stringify(selectedCategories.map((cat) => cat.id)),
@@ -414,7 +416,7 @@ function BlogPost({ categories }) {
 
         //     clear state
         //     go back to home page /
-        navigate("/RedBerryTest/");
+        navigate("/");
     };
 
     return (

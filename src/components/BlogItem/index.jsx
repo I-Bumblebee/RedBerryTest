@@ -32,12 +32,23 @@ function BlogItem({
                         : { width: "544px", height: "437px" }
                 }
             />
-            <h3 style={fullScale ? {marginTop: "53px"} : {}}>{author}</h3>
-            <h4 style={fullScale ? {marginTop: "18px"} : {}}>{date + (fullScale ?  (email ? "  •  " + email : ""): "")}</h4>
-            <h2 style={fullScale ? { fontSize: "43px", marginTop: "32px"} : { fontSize: "27px" }}>
+            <h3 style={fullScale ? { marginTop: "53px" } : {}}>{author}</h3>
+            <h4 style={fullScale ? { marginTop: "18px" } : {}}>
+                {date + (fullScale ? (email ? "  •  " + email : "") : "")}
+            </h4>
+            <h2
+                style={
+                    fullScale
+                        ? { fontSize: "43px", marginTop: "32px" }
+                        : { fontSize: "27px" }
+                }
+            >
                 {title}
             </h2>
-            <div className="blog-item-categories-row" style={fullScale ? {marginTop: "32px"} : {}}>
+            <div
+                className="blog-item-categories-row"
+                style={fullScale ? { marginTop: "32px" } : {}}
+            >
                 {categories.map((cat) => (
                     <CatItem
                         key={cat.id}
@@ -53,13 +64,14 @@ function BlogItem({
             <p
                 style={
                     fullScale
-                        ? {marginTop: "53px"}
+                        ? { marginTop: "53px" }
                         : {
                               overflow: "hidden",
                               display: "-webkit-box",
                               WebkitLineClamp: 2,
                               WebkitBoxOrient: "vertical",
                               height: `calc(56px * var(--multiplier))`,
+                              wordBreak: "break-all",
                           }
                 }
             >

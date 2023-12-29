@@ -23,6 +23,7 @@
     justify-content: center;
     box-sizing: border-box;
     padding: 0 calc(76px * var(--multiplier));
+    background-color: white;
 }
 
 .sign-in-button {
