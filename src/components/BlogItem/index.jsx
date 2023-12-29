@@ -40,7 +40,14 @@ function BlogItem({
                 style={
                     fullScale
                         ? { fontSize: "43px", marginTop: "32px" }
-                        : { fontSize: "27px" }
+                        : { fontSize: "27px",
+                            overflow: "hidden",
+                            display: "-webkit-box",
+                            WebkitLineClamp: 2,
+                            WebkitBoxOrient: "vertical",
+                            height: `calc(51px * var(--multiplier))`,
+                            wordBreak: "break-all",
+                        }
                 }
             >
                 {title}

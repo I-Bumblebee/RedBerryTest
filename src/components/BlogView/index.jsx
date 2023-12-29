@@ -1,6 +1,6 @@
 import "./BlogView.css";
 import { useParams } from "react-router-dom";
-import {useEffect, useRef, useState} from "react";
+import { useEffect, useRef, useState } from "react";
 import BlogItem from "../BlogItem";
 import { ReactComponent as LeftArrowIcon } from "../../assets/left-arrow-icon.svg";
 
@@ -20,10 +20,10 @@ function ViewBlog({ blogs }) {
 
     const similarsRowRef = useRef(null);
     const [isMaxLeft, setIsMaxLeft] = useState(true);
-    const [isMaxRight, setIsMaxRight] = useState(false);
+    const [isMaxRight, setIsMaxRight] = useState(true);
 
     useEffect(() => {
-        const token = `922655a53d1e1a589ab56fb63466de5a1e4c0ee9728e5488015b9a613ecff0b2`;
+        const token = `ee383d4cbf7503aaf852de7ba37c49d6a3911e1b46002bd9ddc5d9eadaa26889`;
         const requestOptions = {
             method: "GET",
             headers: {
@@ -78,42 +78,74 @@ function ViewBlog({ blogs }) {
         setSimilarBlogs(filteredBlogsWithoutCurrent);
     }, [blogData, blogs, id]);
 
-
     useEffect(() => {
         const observer = new MutationObserver((mutationsList, observer) => {
             // Look through all mutations that just occured
-            for(let mutation of mutationsList) {
+            for (let mutation of mutationsList) {
                 // If the addedNodes property has one or more nodes
-                if(mutation.addedNodes.length) {
+                if (mutation.addedNodes.length) {
                     const similarsRow = similarsRowRef.current;
-                    if(similarsRow) {
+                    if (similarsRow) {
                         const handleScroll = () => {
-                            const isAtMaxRight = similarsRow.scrollLeft + similarsRow.clientWidth >= similarsRow.scrollWidth-200;
+                            const isAtMaxRight =
+                                similarsRow.scrollLeft +
+                                    similarsRow.clientWidth >=
+                                similarsRow.scrollWidth - 200;
                             const isAtMaxLeft = similarsRow.scrollLeft <= 200;
                             setIsMaxRight(isAtMaxRight);
                             setIsMaxLeft(isAtMaxLeft);
                         };
-                        similarsRow.addEventListener('scroll', handleScroll);
+                        similarsRow.addEventListener("scroll", handleScroll);
                         // Once our observed element has been added, we disconnect the observer
                         observer.disconnect();
                         return () => {
-                            similarsRow.removeEventListener('scroll', handleScroll);
+                            similarsRow.removeEventListener(
+                                "scroll",
+                                handleScroll,
+                            );
                         };
                     }
                 }
             }
         });
         // Starts listening for changes in the root HTML element of the page
-        observer.observe(document.documentElement, { childList: true, subtree: true });
+        observer.observe(document.documentElement, {
+            childList: true,
+            subtree: true,
+        });
     }, []);
 
+    useEffect(() => {
+        const observer = new MutationObserver((mutationsList) => {
+            // Look through all mutations that just occured
+            for (let mutation of mutationsList) {
+                // If the addedNodes property has one or more nodes
+                if (mutation.addedNodes.length) {
+                    const similarsRow = similarsRowRef.current;
+                    if (similarsRow) {
+                        const isAtMaxRight =
+                            similarsRow.scrollLeft + similarsRow.clientWidth >=
+                            similarsRow.scrollWidth - 200;
+                        const isAtMaxLeft = similarsRow.scrollLeft <= 200;
+                        setIsMaxRight(isAtMaxRight);
+                        setIsMaxLeft(isAtMaxLeft);
+                    }
+                }
+            }
+        });
+        // Starts listening for changes in the root HTML element of the page
+        observer.observe(document.documentElement, {
+            childList: true,
+            subtree: true,
+        });
+    }, []);
 
     const scrollRight = () => {
         const similarsRow = similarsRowRef.current;
         const scrollAmount = 585;
         similarsRow.scrollTo({
             left: similarsRow.scrollLeft + scrollAmount,
-            behavior: 'smooth',
+            behavior: "smooth",
         });
     };
 
@@ -122,7 +154,7 @@ function ViewBlog({ blogs }) {
         const scrollAmount = -585;
         similarsRow.scrollTo({
             left: similarsRow.scrollLeft + scrollAmount,
-            behavior: 'smooth',
+            behavior: "smooth",
         });
     };
 
@@ -152,10 +184,17 @@ function ViewBlog({ blogs }) {
                     <div className="similars-header">
                         <h2>მსგავსი სტატიები</h2>
                         <div className="scroll-buttons">
-                            <LeftArrowIcon className={`left-scroll-icon ${!isMaxLeft && "max-scroll-reached"}`} onClick={scrollLeft}/>
                             <LeftArrowIcon
-                                className={`right-scroll-icon ${!isMaxRight && "max-scroll-reached"}`}
-                                style={{ transform: "rotate(180deg)"}}
+                                className={`left-scroll-icon ${
+                                    !isMaxLeft && "max-scroll-reached"
+                                }`}
+                                onClick={scrollLeft}
+                            />
+                            <LeftArrowIcon
+                                className={`right-scroll-icon ${
+                                    !isMaxRight && "max-scroll-reached"
+                                }`}
+                                style={{ transform: "rotate(180deg)" }}
                                 onClick={scrollRight}
                             />
                         </div>

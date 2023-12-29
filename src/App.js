@@ -15,7 +15,7 @@ function App() {
 
 
     useEffect(() => {
-        const token = `922655a53d1e1a589ab56fb63466de5a1e4c0ee9728e5488015b9a613ecff0b2`;
+        const token = `ee383d4cbf7503aaf852de7ba37c49d6a3911e1b46002bd9ddc5d9eadaa26889`;
 
         // Fetch categories
         const requestOptions = {
